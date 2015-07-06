@@ -1,7 +1,6 @@
 #import <Foundation/Foundation.h>
+#import "PGSearchHistory.h"
 
-typedef unsigned long long Number;
-static Number lastNumber = 1*1000*1000*1000LL;
 //static const int sliceSize = 32*1024;
 
 @interface PGGenerator : NSObject
@@ -9,7 +8,7 @@ static Number lastNumber = 1*1000*1000*1000LL;
 + (NSArray *)generateSimples:(Number)lim;
 + (NSArray *)generateSimplesOdd:(Number)limit;
 
-+ (void)saveResults:(id)results;
++ (void)saveResults:(NSArray *)numbers forNumber:(NSString *)limit;
 + (id)loadCachedResults;
 
 @end

@@ -1,8 +1,9 @@
 #import "PGMainViewController.h"
 #import "PGHistoryViewController.h"
-#import "PGGenerator.h"
 
 static NSString *const cellIdentifier = @"MyCell";
+static NSString *const kHistorySegue =  @"showHistory";
+static NSString *const kNumberSet = @"0123456789";
 
 @interface PGMainViewController () <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
@@ -79,9 +80,7 @@ static NSString *const cellIdentifier = @"MyCell";
 
 - (void)cacheTheResults
 {
-   PGSeachResult *searchResult = [[PGSeachResult alloc] initWithLimit:self.inputField.text
-                                                              numbers:self.generatedNumbers];
-   [PGGenerator saveResults:searchResult];
+   [PGGenerator saveResults:self.generatedNumbers forNumber:self.inputField.text];
 }
 
 
@@ -97,12 +96,13 @@ static NSString *const cellIdentifier = @"MyCell";
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-   if ([[segue identifier] isEqualToString:@"showHistory"]) {
+   if ([[segue identifier] isEqualToString:kHistorySegue]) {
       PGHistoryViewController *hvc = (PGHistoryViewController *)[segue destinationViewController];
       dispatch_async(dispatch_get_global_queue(0, 0), ^{
-         hvc.cachedResults = [PGGenerator loadCachedResults];
+         /* improved work with memory */
+         hvc.cachedHistory = [PGGenerator loadCachedResults];
          dispatch_async(dispatch_get_main_queue(), ^{
-            [hvc.tableView reloadData];
+            [hvc updateUI:0];
          });
       });
    }
@@ -136,7 +136,7 @@ static NSString *const cellIdentifier = @"MyCell";
 
 - (BOOL)isDecimalNumber:(NSString *)numberString
 {
-   NSCharacterSet *numberSet = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+   NSCharacterSet *numberSet = [NSCharacterSet characterSetWithCharactersInString:kNumberSet];
    NSCharacterSet *nonNumberSet = [numberSet invertedSet];
    BOOL correctInput = ([numberString rangeOfCharacterFromSet:nonNumberSet].location == NSNotFound);
    

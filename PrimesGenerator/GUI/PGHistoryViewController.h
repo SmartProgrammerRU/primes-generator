@@ -1,8 +1,10 @@
 #import <UIKit/UIKit.h>
-#import "PGSeachResult.h"
+#import "PGGenerator.h"
 
-@interface PGHistoryViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+@interface PGHistoryViewController : UIViewController
 
-@property (strong, nonatomic) NSArray *cachedResults;
+@property (strong, nonatomic) PGSearchHistory *cachedHistory;
+
+- (void)updateUI:(NSInteger)page;
 
 @end

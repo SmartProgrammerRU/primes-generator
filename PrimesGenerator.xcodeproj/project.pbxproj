@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84550D4D1B4AB86E00544C43 /* PGSearchHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 84550D4C1B4AB86E00544C43 /* PGSearchHistory.m */; };
 		8455A1541B46A5A4006D93A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8455A1531B46A5A4006D93A9 /* main.m */; };
 		8455A1571B46A5A4006D93A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8455A1561B46A5A4006D93A9 /* AppDelegate.m */; };
 		8455A1601B46A5A4006D93A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8455A15E1B46A5A4006D93A9 /* Main.storyboard */; };
@@ -14,10 +15,8 @@
 		8455A1651B46A5A4006D93A9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8455A1631B46A5A4006D93A9 /* LaunchScreen.xib */; };
 		8455A1711B46A5A4006D93A9 /* PrimesGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8455A1701B46A5A4006D93A9 /* PrimesGeneratorTests.m */; };
 		8455A18B1B46F178006D93A9 /* PGGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8455A1881B46F178006D93A9 /* PGGenerator.m */; };
-		8455A18C1B46F178006D93A9 /* PGSeachResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 8455A18A1B46F178006D93A9 /* PGSeachResult.m */; };
 		8455A1941B46F193006D93A9 /* PGHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8455A18F1B46F193006D93A9 /* PGHistoryViewController.m */; };
 		8455A1951B46F193006D93A9 /* PGMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8455A1911B46F193006D93A9 /* PGMainViewController.m */; };
-		8455A1961B46F193006D93A9 /* PGResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8455A1931B46F193006D93A9 /* PGResultCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84550D4B1B4AB86E00544C43 /* PGSearchHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PGSearchHistory.h; path = Model/PGSearchHistory.h; sourceTree = "<group>"; };
+		84550D4C1B4AB86E00544C43 /* PGSearchHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PGSearchHistory.m; path = Model/PGSearchHistory.m; sourceTree = "<group>"; };
 		8455A14E1B46A5A3006D93A9 /* PrimesGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimesGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8455A1521B46A5A4006D93A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8455A1531B46A5A4006D93A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -44,14 +45,10 @@
 		8455A1701B46A5A4006D93A9 /* PrimesGeneratorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrimesGeneratorTests.m; sourceTree = "<group>"; };
 		8455A1871B46F178006D93A9 /* PGGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PGGenerator.h; path = Model/PGGenerator.h; sourceTree = "<group>"; };
 		8455A1881B46F178006D93A9 /* PGGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PGGenerator.m; path = Model/PGGenerator.m; sourceTree = "<group>"; };
-		8455A1891B46F178006D93A9 /* PGSeachResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PGSeachResult.h; path = Model/PGSeachResult.h; sourceTree = "<group>"; };
-		8455A18A1B46F178006D93A9 /* PGSeachResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PGSeachResult.m; path = Model/PGSeachResult.m; sourceTree = "<group>"; };
 		8455A18E1B46F193006D93A9 /* PGHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PGHistoryViewController.h; path = GUI/PGHistoryViewController.h; sourceTree = "<group>"; };
 		8455A18F1B46F193006D93A9 /* PGHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PGHistoryViewController.m; path = GUI/PGHistoryViewController.m; sourceTree = "<group>"; };
 		8455A1901B46F193006D93A9 /* PGMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PGMainViewController.h; path = GUI/PGMainViewController.h; sourceTree = "<group>"; };
 		8455A1911B46F193006D93A9 /* PGMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PGMainViewController.m; path = GUI/PGMainViewController.m; sourceTree = "<group>"; };
-		8455A1921B46F193006D93A9 /* PGResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PGResultCell.h; path = GUI/PGResultCell.h; sourceTree = "<group>"; };
-		8455A1931B46F193006D93A9 /* PGResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PGResultCell.m; path = GUI/PGResultCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,8 +133,8 @@
 			children = (
 				8455A1871B46F178006D93A9 /* PGGenerator.h */,
 				8455A1881B46F178006D93A9 /* PGGenerator.m */,
-				8455A1891B46F178006D93A9 /* PGSeachResult.h */,
-				8455A18A1B46F178006D93A9 /* PGSeachResult.m */,
+				84550D4B1B4AB86E00544C43 /* PGSearchHistory.h */,
+				84550D4C1B4AB86E00544C43 /* PGSearchHistory.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -145,12 +142,10 @@
 		8455A1971B46F197006D93A9 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
-				8455A18E1B46F193006D93A9 /* PGHistoryViewController.h */,
-				8455A18F1B46F193006D93A9 /* PGHistoryViewController.m */,
 				8455A1901B46F193006D93A9 /* PGMainViewController.h */,
 				8455A1911B46F193006D93A9 /* PGMainViewController.m */,
-				8455A1921B46F193006D93A9 /* PGResultCell.h */,
-				8455A1931B46F193006D93A9 /* PGResultCell.m */,
+				8455A18E1B46F193006D93A9 /* PGHistoryViewController.h */,
+				8455A18F1B46F193006D93A9 /* PGHistoryViewController.m */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -255,8 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8455A1951B46F193006D93A9 /* PGMainViewController.m in Sources */,
-				8455A18C1B46F178006D93A9 /* PGSeachResult.m in Sources */,
-				8455A1961B46F193006D93A9 /* PGResultCell.m in Sources */,
+				84550D4D1B4AB86E00544C43 /* PGSearchHistory.m in Sources */,
 				8455A1571B46A5A4006D93A9 /* AppDelegate.m in Sources */,
 				8455A1541B46A5A4006D93A9 /* main.m in Sources */,
 				8455A1941B46F193006D93A9 /* PGHistoryViewController.m in Sources */,
@@ -461,6 +455,7 @@
 				8455A1761B46A5A4006D93A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8455A1771B46A5A4006D93A9 /* Build configuration list for PBXNativeTarget "PrimesGeneratorTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +464,7 @@
 				8455A1791B46A5A4006D93A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

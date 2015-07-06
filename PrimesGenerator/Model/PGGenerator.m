@@ -81,32 +81,23 @@
    return filePath;
 }
 
-+ (void)saveResults:(id)results
++ (void)saveResults:(NSArray *)generatedNumbers forNumber:(NSString *)limit
 {
-   NSString *cachedPath = [self pathToSaveCachedResults];
-   
-   /* for testing purposes limit fileSize up to 50Mb; if exceeeds, clean old data */
-   static const unsigned long long maxFileSize = 50 * 1024 * 1024;
-   unsigned long long size =
-   [[NSFileManager defaultManager] attributesOfItemAtPath:cachedPath error:nil].fileSize;
-   if (size > maxFileSize) {
-      [[NSFileManager defaultManager] removeItemAtPath:cachedPath error:nil];
-   }
-   
-   NSMutableArray *cachedResults = [self loadCachedResults];
+   PGSearchHistory *cachedResults = [self loadCachedResults];
    if (!cachedResults) {
-      cachedResults = [NSMutableArray array];
+      cachedResults = [[PGSearchHistory alloc] init];
    }
-   [cachedResults addObject:results];
-   
-   NSLog(@"archived: %d", [NSKeyedArchiver archiveRootObject:cachedResults toFile:cachedPath]);
+   BOOL savedSuccessfully = [cachedResults saveToHistory:limit numbers:generatedNumbers];
+   if (savedSuccessfully) {
+      [NSKeyedArchiver archiveRootObject:cachedResults toFile:[self pathToSaveCachedResults]];
+   }
 }
 
 + (id)loadCachedResults
 {
    NSString *cachedPath = [self pathToSaveCachedResults];
    if ([[NSFileManager defaultManager] fileExistsAtPath:cachedPath]) {
-      NSMutableArray *cachedResults = [NSKeyedUnarchiver unarchiveObjectWithFile:cachedPath];
+      id cachedResults = [NSKeyedUnarchiver unarchiveObjectWithFile:cachedPath];
       return cachedResults;
    }
    
