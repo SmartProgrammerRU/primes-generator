@@ -4,6 +4,7 @@
 static NSString *const cellIdentifier = @"MyCell";
 static NSString *const kHistorySegue =  @"showHistory";
 static NSString *const kNumberSet = @"0123456789";
+static NSInteger const kAvailableTextLength = 7;
 
 @interface PGMainViewController () <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
@@ -69,7 +70,8 @@ static NSString *const kNumberSet = @"0123456789";
    
    [self showSpinning];
    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-      self.generatedNumbers = [PGGenerator generateSimples:[number longLongValue]];
+      /* improved generator algorithm */
+      self.generatedNumbers = [PGGenerator generatePrimesOddMultiThreaded:[number longLongValue]];
       [self cacheTheResults];
       dispatch_async(dispatch_get_main_queue(), ^{
          [self hideSpinning];
@@ -155,7 +157,7 @@ static NSString *const kNumberSet = @"0123456789";
    BOOL isInputCorect = [self isDecimalNumber:string];
    
    // for testing purposes let's a number will be within  [2 ; 10 000 000)
-   if ([textField.text length] >= 7 && ![string isEqualToString:@""]) {
+   if ([textField.text length] >= kAvailableTextLength && ![string isEqualToString:@""]) {
       isInputCorect = NO;
    }
    
